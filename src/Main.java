@@ -28,15 +28,13 @@ public class Main {
                 if (input.length == 3) {
                     int row = Integer.parseInt(input[1]);
                     int col = Integer.parseInt(input[2]);
-                    if (row >= 0 && row < ROW && col >= 0 && col < COL) {
-                        String cmd = input[0].toLowerCase();
-                        if (cmd.equals("f")) {
-                            board.flagCell(row, col);
-                            return;
-                        } else if (cmd.equals("r")) {
-                            board.revealCell(row, col);
-                            return;
-                        }
+                    String cmd = input[0].toLowerCase();
+                    if (cmd.equals("f")) {
+                        board.flagCell(row, col);
+                        return;
+                    } else if (cmd.equals("r")) {
+                        board.revealCell(row, col);
+                        return;
                     }
                 }
                 throw new IllegalArgumentException();
